@@ -1,0 +1,217 @@
+.wd-main-account-container {
+   display:flex;
+}
+
+
+.wd-account-main-page {
+    width: fit-content;
+    height: 100vh;
+    padding: 1.5rem;
+}
+.wd-form-select-style{
+    display: block;
+    width: 30%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.wd-form-input-text{
+    display: block;
+    width: 50%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.wd-custom-hamburger::before {
+    font-size: 1.8rem;
+    color: #D41B2C;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.wd-dashboard-header{
+    font-size: 2.375rem;
+    font-weight: 300;
+    padding-left: 5px;
+    position: relative;
+    color: rgba(77, 77, 77, 0.96);
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wd-dashboard-pub-courses{
+    font-size: 2rem;
+    padding-left: 20px;
+    position: relative;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wd-scrollable {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.account-header{
+    margin: 0.5rem 0 1rem 0;
+}
+.wd-main-dashboard{
+    padding: 0 1rem;
+}
+
+.wd-dashboard-sub-header{
+    margin: 0.25rem 0;
+    padding: 0;
+}
+
+.wd-dashboard-course-card {
+    width: 300px;
+}
+.wd-card-image-container{
+    width: 100%;
+    height: 10rem;
+    background: #0099ff;
+}
+.wd-course-card-ellipses{
+    padding: 1rem;
+    cursor: pointer;
+}
+.wd-custom-divider{
+    margin-top:-10px;
+    height: 2px;
+    background: grey;
+}
+.wd-custom-divider2{
+    margin-top:-10px;
+    height: 2px;
+    padding-left: 20px;
+    background: grey;
+}
+.wd-card-header{
+    color: blue;
+    cursor: pointer;
+}
+
+.wd-account-navigation{
+    width: 200px;
+}
+
+.wd-navigation-element{
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.wd-navigation-element a{
+    text-decoration: none;
+    position: relative;
+    color: red;
+
+}
+.wd-navigation-element a:hover{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-left: 3px;
+    border-left: 2px solid black;
+}
+
+
+.wd-navigation-element-title{
+    color: red;
+
+}
+.wd-navigation-element-active a{
+    text-decoration: none;
+    color: black;
+    padding-left: 3px;
+    border-left: 2px solid black;
+}
+
+.wd-navigation-element-title-active{
+    color: black;
+}
+
+
+/*test*/
+.wd-edit-profile-action-button{
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    color: black;
+    float: right;
+}
+
+
+.wd-account-icon-container {
+    border: 1px solid grey;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wd-account-icon {
+    font-size: 7.5rem;
+    color: grey;
+}
+
+.wd-account-title {
+    padding: 1rem 0;
+}
+
+.wd-basic-details {
+    padding: 1rem 0;
+}
+
+.wd-link-icon {
+    color: grey;
+    font-size: 1rem;
+}
+
+.wd-pointer {
+    cursor: pointer;
+}
+.wd-red{
+    color: red;
+}
+.wd-text-grey{
+    color: grey;
+}
+.wd-card-text{
+    color: grey;
+    margin-top: 0;
+    font-size: small;
+}
+.wd-card-icon{
+    color: grey;
+}
+.wd-card-icon:hover{
+    color: red;
+}

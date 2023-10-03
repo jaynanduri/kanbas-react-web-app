@@ -1,0 +1,19 @@
+.wd-navbar-text{
+    color: red !important;
+}
+.wd-image-container{
+    border: 1px solid lightgrey;
+    align-content: center !important;
+}
+.wd-box-image {
+    margin: 12%;
+}
+.wd-text-align{
+    text-align: left !important;
+}
+.wd-course-temp-text{
+    color: grey;
+}
+.wd-form-bg-color {
+    background-color: lightgrey !important;
+}

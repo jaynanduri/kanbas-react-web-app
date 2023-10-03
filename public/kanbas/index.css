@@ -1,0 +1,126 @@
+.wd-kanbas-navigation{
+    background-color: black;
+    list-style: None;
+    padding: 0px;
+    width: 85px;
+}
+
+.kanbas-app-logo{
+    display: block;
+    overflow: hidden;
+    background-image: url("https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .3s;
+    height: 75px;
+        }
+
+.wd-kanbas-navigation li{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin: 5px;
+ }
+
+.wd-kanbas-navigation li a{
+   color: white;
+   text-decoration: none;
+   display: block;
+   font-size: 0.8em;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wd-fg-color-black {
+    color: black;
+}
+
+
+
+.wd-fg-color-white {
+    color: rgb(245, 231, 231);
+}
+
+
+.wd-fg-color-blue {
+    color:#7070ff;
+}
+
+
+.wd-fg-color-red {
+    color: #ff7070;
+}
+
+
+.wd-fg-color-green {
+    color: green;
+}
+
+.wd-bg-color-yellow {
+    background-color: yellow;
+}
+
+.wd-bg-color-blue{
+    background-color: #7070ff;
+}
+
+
+.wd-bg-color-red {
+    background-color: #ff7070;
+}
+
+.wd-bg-color-green {
+    background-color: green;
+}
+
+.wd-flex-row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+
+ .wd-kanbas-navigation li.wd-active {
+  background-color:white;
+ }
+
+ .wd-kanbas-navigation li.wd-active a {
+   color:red;
+   margin: 0.4rem 0;
+   font-size: 0.8em;
+
+ }
+ .wd-main-navbar-content{
+    width: 85px;
+    height: 100vh;
+    background: black;
+}
+
+ .wd-main-navbar-item-container img {
+    width: 100%;
+    height: auto;
+ }
+
+
+ .wd-nav-item-icon {
+    font-size: 1.75rem;
+    color: #D41B2C;
+ }
+
+.white {
+    color: rgb(245, 231, 231);
+}

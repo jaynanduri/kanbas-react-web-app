@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Kanbas</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet"/>
+
 </head>
 <body>
-<table>
-  <tr>
-    <td valign="top">
-        <ul>
-            <li><a href="./profile/">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="home.html">Course</a></li>
-            <li><a href="#">Calender</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-        </ul>
-    </td>
-  </tr>
-</table>
-<!--<a href="home.html">Home page</a>-->
+<div class="wd-main-navbar-content">
+
+  <div class="wd-main-navbar-item-container">
+    <a class="wd-main-navbar-link kanbas-app-logo" href="index.html"></a>
+  </div>
+  <ul class="wd-kanbas-navigation">
+
+    <li><a href="account/index.html"> <i class="fa-regular fa-circle-user wd-nav-item-icon white"></i><p>Account</p></a></li>
+    <li><a href="home/dashboard.html">  <i class="fa-solid fa-gauge wd-nav-item-icon"></i><p>Dashboard</p></a></li>
+    <li ><a href="courses/"> <i class="fa-solid fa-book wd-nav-item-icon"></i><p>Courses</p></a></li>
+    <li><a href="#"><i class="fa-solid fa-calendar-days wd-nav-item-icon"></i><p>Calendar</p></a></li>
+    <li><a href="#"><i class="fa-solid fa-inbox wd-nav-item-icon"></i><p>Inbox</p></a></li>
+    <li><a href="#"><i class="fa-regular fa-clock wd-nav-item-icon"></i><p>History</p></a></li>
+    <li><a href="#"><i class="fa-solid fa-tv wd-nav-item-icon"></i><p>Studio</p></a></li>
+    <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket wd-nav-item-icon"></i><p>Commons</p></a></li>
+    <li><a href="#"><i class="fa-regular fa-circle-question wd-nav-item-icon"></i><p>Help</p></a></li>
+  </ul>
+</div>
+
 </body>
 </html>
