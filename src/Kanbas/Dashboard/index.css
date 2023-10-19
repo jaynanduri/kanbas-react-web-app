@@ -1,0 +1,49 @@
+body{
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wd-dashboard-header-text{
+    font-size: 2.375rem;
+    font-weight: 300;
+    padding-left: 30px;
+    position: relative;
+    color: rgba(77, 77, 77, 0.96);
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wd-dashboard-sub-header-text{
+    margin-left: 3rem;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #212529;
+}
+
+.wd-dashboard-course-card {
+    width: 300px;
+}
+
+.wd-course-card{
+    width: 270px;
+}
+
+.wd-card-image-container{
+    width: 100%;
+    height: 10rem;
+}
+
+.wd-course-card-ellipses{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.wd-col-red{
+    color: red;
+}
+
+.wd-card-header{
+    color: royalblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+.wd-light-grey{
+    color: black;
+}

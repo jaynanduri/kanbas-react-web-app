@@ -1,0 +1,47 @@
+.wd-kanbas-navigation{
+    background-color: black;
+    list-style: None;
+    padding: 0px;
+    width: 85px;
+}
+
+.wd-kanbas-navigation-item{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+ }
+
+.wd-kanbas-app-logo{
+    display: block;
+    overflow: hidden;
+    background-image: url("https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .3s;
+    height: 75px;
+}
+.wd-nav-item-icon {
+    font-size: 1.75rem;
+    color: #D41B2C;
+}
+.wd-color-white{
+    color: rgb(245, 231, 231);;
+}
+
+.wd-active{
+    background-color:white;
+}
+
+.wd-active p{
+    color: red;
+}
+.wd-kanbas-navigation a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8em;
+}

@@ -1,0 +1,146 @@
+.wd-scrollable{
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.wd-account-main-page {
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.wd-custom-hamburger{
+    color: red;
+    font-size: 1.7rem;
+}
+
+.breadcrumb-divider{
+    color: #7e7e7e;
+    padding: 10px;
+}
+
+.wd-form-select-style{
+    display: block;
+    width: 30%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.wd-breadcrumb-header {
+    color: red;
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-weight: 300;
+}
+.wd-custom-divider{
+    width: 95%;
+}
+
+.wd-breadcrumb-header-active {
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.wd-account-navigation{
+    width: 200px;
+}
+
+.wd-note{
+    padding-left: 0.8rem;
+    font-size: small;
+    font-style: italic;
+}
+
+.wd-color-black{
+    color: black;
+}
+.wd-border-left{
+    border-left: 2px solid black;
+}
+.wd-navigation-element-link{
+    text-decoration: none;
+    position: relative;
+    color: red;
+
+}
+.wd-color-green{
+    color:green;
+}
+.wd-navigation-element{
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.wd-course-action-buttons{
+    padding: 5px;
+}
+
+.wd-custom-margin {
+    margin: 0 0.5rem;
+}
+
+.wd-course-status{
+    margin: 0 0.25rem;
+    padding: 10px;
+}
+
+.wd-custom-font{
+    font-size: 1rem
+}
+
+.wd-padding-left{
+    padding-left: 30px;
+}
+
+.wd-course-status-btn-sec{
+    margin: 0 0.25rem;
+    width: 100%;
+}
+
+.wd-custom-font {
+    color: red;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative;
+}
+
+.wd-color-red{
+    color: red;
+}
+
+.wd-green-border{
+    border-left: 7px solid green !important;
+}
+
+.wd-assignment-custom-font {
+    color: black;
+    font-size: 1rem;
+    font-weight: 350;
+    text-decoration: none;
+    position: relative;
+}
+
+.wd-custom-font-footer {
+    color: rgba(77, 77, 77, 0.96);
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative;
+}
