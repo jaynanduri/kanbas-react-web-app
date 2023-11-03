@@ -1,7 +1,6 @@
 import {Link, useParams, useLocation} from "react-router-dom";
-import db from "../../Database";
 
-function CourseNavigation() {
+function CourseNavigation({courses}) {
     const links = ["Home", "Modules", "Piazza", "Zoom Meeting", "Assignments", "Quizzes", "Grades", "People",
         "Panopto Video", "Discussions", "Announcements", "Pages", "Files", "Rubrics", "Outcomes", "Collaborations",
         "Syllabus", "Settings"];
@@ -10,7 +9,7 @@ function CourseNavigation() {
 
     const {courseId} = useParams();
     const {pathname} = useLocation();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
 
     return (
         <div className="wd-navigation-element">

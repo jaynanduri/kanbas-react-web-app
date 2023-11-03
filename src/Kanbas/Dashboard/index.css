@@ -17,6 +17,12 @@ body{
     color: #212529;
 }
 
+.wd-dashboard-list{
+    margin-left: 3rem;
+    font-weight: normal;
+    color: #212529;
+}
+
 .wd-dashboard-course-card {
     width: 300px;
 }

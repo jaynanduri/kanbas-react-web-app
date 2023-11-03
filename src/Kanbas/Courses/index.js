@@ -1,4 +1,3 @@
-import db from "../../Kanbas/Database";
 // eslint-disable-next-line
 import {Link, useLocation, useNavigate, useParams} from "react-router-dom";
 import "./index.css"
@@ -14,12 +13,13 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import AssignmentName from "./Assignments/AssignmentEditor/AssignmentName";
 import AssignmentEditorActionButtons from "./Assignments/AssignmentEditor/AssignmentEditorActionButtons";
 
-function Courses() {
+function Courses({courses}) {
     const {courseId} = useParams();
     const {pathname} = useLocation();
-    const array = pathname.split("/");
-    console.log(array);
-    const course = db.courses.find((course) => course._id === courseId);
+    // const array = pathname.split("/");
+    console.log(courseId);
+    const course = courses.find((course) => course._id === courseId);
+    console.log(course);
     return (
         <div className="wd-scrollable">
             <div className="wd-main-account-page">
@@ -45,8 +45,6 @@ function Courses() {
                                                           className="breadcrumb-item wd-breadcrumb-header d-flex">
                                                         Assignments <AssignmentName/>
                                                     </Link>
-                                                    {/*<span className="breadcrumb-divider mt-1" style={{fontSize:"1rem"}}>*/}
-                                                    {/*    &gt;</span>*/}
                                                     </>}/>
                                                 <Route path="Grades" element={<>Grades</>}/>
                                                 <Route path="Grades" element={<>Grades</>}/>
@@ -65,7 +63,7 @@ function Courses() {
                     <div className="row">
                         <div className="col-2">
                             <div className="wd-account-navigation">
-                                <CourseNavigation/>
+                                <CourseNavigation courses={courses}/>
                             </div>
                         </div>
                         <div className="col-7">

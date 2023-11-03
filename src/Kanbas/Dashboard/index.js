@@ -1,12 +1,11 @@
 import {Link} from "react-router-dom";
-
-import db from "../Database"
+import {React} from "react";
 import "./index.css";
 
-function Dashboard() {
-    const courses = db.courses;
-    console.log(courses);
-    const colors = ["darkblue", "darkgoldenrod", "darkred"]
+function Dashboard(
+    {courses, course, setCourse, addNewCourse, deleteCourse, updateCourse}
+) {
+    const colors = ["darkblue", "darkgoldenrod", "darkred"];
     return (
         <div className="container-fluid">
             <div className="row d-flex flex-row flex-wrap pb-0">
@@ -25,30 +24,70 @@ function Dashboard() {
                     <hr className="m-1 font-weight"/>
                 </div>
             </div>
-            <div className="container-fluid">
-                <div className="d-flex flex-row flex-wrap row" style={{"margin": "1rem"}}>
-                    {courses.map((course) => {
-                        let random = Math.floor(Math.random() * colors.length);
-                        return (
-                        <div className="card wd-course-card m-5 p-0">
-                        <div className="wd-card-image-container" style={{"background":`${colors[random]}`}}>
-                            <div className="float-end">
-                                <div className="wd-course-card-ellipses p-1">
-                                    <i className="fa-solid fa-ellipsis-vertical wd-color-white p-2"></i>
+            <div className="row d-flex flex-row flex-wrap mt-2">
+                <div className="wd-dashboard-list col-sm-11 col-md-11 col-xl-11 list-group">
+                    <ul className={"list-group"}>
+                        <li className={"list-group-item"}>
+                            <input value={course.name} className={"form-control border list-group-item w-25 m-1"}
+                                onChange={(e)=>setCourse({...course,
+                                name: e.target.value})}/>
+                            <input value={course.number} className={"form-control border list-group-item w-25 m-1"}
+                                onChange={(e)=>setCourse({...course,
+                                number: e.target.value})}/>
+                            <input value={course.startDate} className={"form-control border list-group-item w-25 m-1"}
+                                   type={"date"} onChange={(e)=>setCourse(
+                                       {...course, startDate: e.target.value})}/>
+                            <input value={course.endDate} className={"form-control border list-group-item w-25 m-1"}
+                                   type={"date"} onChange={(e)=>setCourse(
+                                       {...course, endDate: e.target.value})}/>
+                            <button onClick={addNewCourse} className={"btn btn-success border m-1"}>
+                                Add
+                            </button>
+                            <button onClick={updateCourse} className={"btn btn-primary border m-1"}>
+                                Update
+                            </button>
+                        </li>
+                    </ul>
+                    <div className="container-fluid">
+                        <div className="d-flex flex-row flex-wrap row" style={{"margin": "1rem"}}>
+                            {courses.map((course) => {
+                                let random = Math.floor(Math.random() * colors.length);
+                                return (
+                                <div className="card wd-course-card m-5 p-0">
+                                <div className="wd-card-image-container" style={{"background":`${colors[random]}`}}>
+                                    <div className="float-end">
+                                        <div className="wd-course-card-ellipses p-1">
+                                            <i className="fa-solid fa-ellipsis-vertical wd-color-white p-2"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card-body">
+                                    <Link key={course._id} to={`/Kanbas/Courses/${course._id}`}
+                                          className="wd-card-header" style={{textDecoration:"none"}}>
+                                        {course.number} {course.name} <span className="wd-col-red">...</span>
+                                    </Link>
+                                    <p className="card-subtitle text-body-secondary">{course.number}.12631.{course.endDate}</p>
+                                    <p className="card-text wd-card-text">202410_1 Fall 2023 Semester</p>
+                                    <button onClick={(e)=>{
+                                        e.preventDefault(); // from clicking on hyperlink
+                                        deleteCourse(course._id);
+                                    }}
+                                        className={"btn btn-danger border float-end m-1"}>
+                                        Delete
+                                    </button>
+                                    <button onClick={(e)=>{
+                                        e.preventDefault(); // from clicking on hyperlink
+                                        setCourse(course);
+                                    }}
+                                        className={"btn btn-warning border float-end m-1"}>
+                                        Edit
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div className="card-body">
-                            <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="list-group-item wd-card-header">
-                                {course.number} {course.name} <span className="wd-col-red">...</span>
-                            </Link>
-                            <p className="card-subtitle text-body-secondary">{course.number}.12631.{course.endDate}</p>
-                            <p className="card-text wd-card-text">202410_1 Fall 2023 Semester</p>
-                            <i className="fa-solid fa-file-pen fa-lg wd-light-grey p-2"></i>
+                            );
+                            })}
                         </div>
                     </div>
-                    );
-                    })}
                 </div>
             </div>
         </div>
