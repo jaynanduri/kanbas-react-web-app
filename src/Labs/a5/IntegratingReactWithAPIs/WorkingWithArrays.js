@@ -4,7 +4,7 @@ import axios from "axios";
 
 function WorkingWithArrays() {
     const [errorMsg, setErrorMsg] = useState(null);
-    const BASE_URL = process.env.BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
     const API = `${BASE_URL}/a5/todos`;
     const [todo, setTodo] = useState({
     id: 1, title: "Learn NodeJS", due: "2021-09-09",

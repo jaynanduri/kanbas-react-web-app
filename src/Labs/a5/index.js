@@ -8,13 +8,12 @@ const Assignment5 = () => {
         <div className="container">
             <h1>Assignment 5</h1>
             <a
-					href={`${process.env.BACKEND_URL}/a5/welcome`}
+					href={`${process.env.REACT_APP_BACKEND_URL}/a5/welcome`}
 					className='list-group-item'>
 					Welcome to Assignment5
             </a>
-            {/*<input type="text" className="form-control w-50" value="Welcome"/>*/}
-            {/*<APIExamples/>*/}
-            {/*<IntegratingReactWithAPIs/>*/}
+            <APIExamples/>
+            <IntegratingReactWithAPIs/>
         </div>
     );
 }

@@ -9,7 +9,7 @@ function WorkingWithObjects() {
         completed: false,
         score: 0,
     });
-    const BASE_URL = process.env.BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
     const URL = `${BASE_URL}/a5/assignment`;
     return (
         <>

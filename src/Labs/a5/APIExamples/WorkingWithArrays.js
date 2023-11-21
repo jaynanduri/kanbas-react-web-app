@@ -8,7 +8,7 @@ function WorkingWithArrays() {
         due: "2021-09-09",
         completed: false,
     });
-    const BASE_URL = process.env.BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
     const API = `${BASE_URL}/a5/todos`;
     return(
         <>

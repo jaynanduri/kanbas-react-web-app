@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function EncodingParametersInURLs() {
     const [a, setA] = useState(34);
     const [b, setB] = useState(23);
-    const BASE_URL = process.env.BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
     return (
         <>
             <h3>Encoding Parameters In URLs</h3>

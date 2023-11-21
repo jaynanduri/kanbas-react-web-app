@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = process.env.BACKEND_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 const COURSES_URL = BASE_URL + "/api/courses";
 const MODULES_URL = BASE_URL + "/api/modules";
 export const createModule = async (courseId, module) => {

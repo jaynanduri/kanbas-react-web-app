@@ -16,7 +16,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 function Courses() {
-    const BASE_URL = process.env.BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
     const URL = BASE_URL + "/api/courses";
     const {courseId} = useParams();
     const {pathname} = useLocation();
