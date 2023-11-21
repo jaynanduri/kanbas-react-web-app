@@ -3,7 +3,6 @@ import {Link, useLocation} from "react-router-dom";
 function KanbasNavigation() {
     const links = ["Account", "Dashboard", "Courses", "Calender", "Inbox", "History", "Studio", "Commons", "Help"];
     const {pathname} = useLocation();
-    console.log(links);
     return (
         <div className="wd-kanbas-navigation h-100">
             <Link to="Dashboard" className={`wd-kanbas-app-logo`}/>

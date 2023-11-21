@@ -3,30 +3,48 @@ import "./KanbasNavigation/index.css"
 import {Navigate, Routes, Route} from "react-router";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import store from "./store";
 import {Provider} from "react-redux";
-import db from "./Database";
+import axios from "axios";
 
 function Kanbas() {
-    const [courses, setCourses] = useState(db.courses);
+    const [courses, setCourses] = useState([]);
+    const BASE_URL = process.env.BACKEND_URL;
+    const URL = BASE_URL + "/api/courses";
+    const findAllCourses = async () => {
+        const response = await axios.get(URL);
+        setCourses(response.data);
+    };
+    const addCourse = async () => {
+        const response = await axios.post(URL, course);
+        setCourses([
+            response.data,
+            ...courses,
+        ]);
+    }
+    useEffect(()=>{
+        findAllCourses();
+    }, []);
     const [course, setCourse] = useState(
         {name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
     });
-    const addNewCourse = () => {
-        setCourses([...courses, {...course, _id: new Date().getTime().toString()}]);
+    const addNewCourse = async () => {
+        const response = await axios.post(URL, course);
+        setCourses([response.data, ...courses,]);
     };
-    const deleteCourse = (courseId) => {
-        setCourses(courses.filter((course)=>course._id !== courseId));
+    const deleteCourse = async (course) => {
+        const response = await axios.delete(`${URL}/${course._id}`);
+        setCourses(courses.filter((c)=>c.number !== course.number));
     };
-    const updateCourse = () => {
+    const updateCourse = async (course) => {
+        const response = await axios.put(`${URL}/${course._id}`, course);
         setCourses(courses.map((c)=>{
-            if(c._id === course._id){
+            if(c.number === course.number){
                 return course;
-            }else {
-                return c;
             }
+            return c;
         }));
     };
     return (

@@ -1,6 +1,6 @@
 import {Link, useParams, useLocation} from "react-router-dom";
 
-function CourseNavigation({courses}) {
+function CourseNavigation() {
     const links = ["Home", "Modules", "Piazza", "Zoom Meeting", "Assignments", "Quizzes", "Grades", "People",
         "Panopto Video", "Discussions", "Announcements", "Pages", "Files", "Rubrics", "Outcomes", "Collaborations",
         "Syllabus", "Settings"];
@@ -9,11 +9,9 @@ function CourseNavigation({courses}) {
 
     const {courseId} = useParams();
     const {pathname} = useLocation();
-    const course = courses.find((course) => course._id === courseId);
 
     return (
         <div className="wd-navigation-element">
-            <div className="wd-note pb-2">{course.number}_{course.startDate}...</div>
             {links.map((link, index) => (
                 <Link
                 key = {index}

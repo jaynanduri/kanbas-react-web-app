@@ -43,7 +43,7 @@ function Dashboard(
                             <button onClick={addNewCourse} className={"btn btn-success border m-1"}>
                                 Add
                             </button>
-                            <button onClick={updateCourse} className={"btn btn-primary border m-1"}>
+                            <button onClick={() => updateCourse(course)} className={"btn btn-primary border m-1"}>
                                 Update
                             </button>
                         </li>
@@ -51,10 +51,9 @@ function Dashboard(
                     <div className="container-fluid">
                         <div className="d-flex flex-row flex-wrap row" style={{"margin": "1rem"}}>
                             {courses.map((course) => {
-                                let random = Math.floor(Math.random() * colors.length);
                                 return (
                                 <div className="card wd-course-card m-5 p-0">
-                                <div className="wd-card-image-container" style={{"background":`${colors[random]}`}}>
+                                <div className="wd-card-image-container" style={{"background":`${colors[1]}`}}>
                                     <div className="float-end">
                                         <div className="wd-course-card-ellipses p-1">
                                             <i className="fa-solid fa-ellipsis-vertical wd-color-white p-2"></i>
@@ -62,7 +61,7 @@ function Dashboard(
                                     </div>
                                 </div>
                                 <div className="card-body">
-                                    <Link key={course._id} to={`/Kanbas/Courses/${course._id}`}
+                                    <Link key={course._id} to={`/Kanbas/Courses/${course.number}`}
                                           className="wd-card-header" style={{textDecoration:"none"}}>
                                         {course.number} {course.name} <span className="wd-col-red">...</span>
                                     </Link>
@@ -70,7 +69,7 @@ function Dashboard(
                                     <p className="card-text wd-card-text">202410_1 Fall 2023 Semester</p>
                                     <button onClick={(e)=>{
                                         e.preventDefault(); // from clicking on hyperlink
-                                        deleteCourse(course._id);
+                                        deleteCourse(course);
                                     }}
                                         className={"btn btn-danger border float-end m-1"}>
                                         Delete

@@ -12,14 +12,28 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import AssignmentName from "./Assignments/AssignmentEditor/AssignmentName";
 import AssignmentEditorActionButtons from "./Assignments/AssignmentEditor/AssignmentEditorActionButtons";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-function Courses({courses}) {
+function Courses() {
+    const BASE_URL = process.env.BACKEND_URL;
+    const URL = BASE_URL + "/api/courses";
     const {courseId} = useParams();
     const {pathname} = useLocation();
     // const array = pathname.split("/");
-    console.log(courseId);
-    const course = courses.find((course) => course._id === courseId);
-    console.log(course);
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        try {
+            const response = await axios.get(`${URL}/${courseId}`);
+            setCourse(response.data);
+    } catch (error) {
+        console.error("Error fetching course data:", error);
+    }
+    };
+    useEffect(()=> {
+        findCourseById(courseId)
+    }, [courseId]);
+    // console.log(course);
     return (
         <div className="wd-scrollable">
             <div className="wd-main-account-page">
@@ -63,7 +77,7 @@ function Courses({courses}) {
                     <div className="row">
                         <div className="col-2">
                             <div className="wd-account-navigation">
-                                <CourseNavigation courses={courses}/>
+                                <CourseNavigation courses={course}/>
                             </div>
                         </div>
                         <div className="col-7">

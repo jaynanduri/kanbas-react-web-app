@@ -1,16 +1,34 @@
 import {useParams} from "react-router";
-import db from "../../Database";
 import {useLocation} from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {addModule, updateModule, deleteModule, setModule} from "./modulesReducer";
+import {addModule, updateModule, deleteModule, setModule, setModules} from "./modulesReducer";
+import * as client from "./client";
 
 function ModuleList() {
     const {courseId} = useParams();
     const {pathname} = useLocation();
+    useEffect(()=>{
+        client.findModulesForCourse(courseId).then((modules)=>dispatch(setModules(modules)))
+    }, [courseId]);
     const modules = useSelector((state)=> state.modulesReducer.modules);
     const module = useSelector((state)=> state.modulesReducer.module);
     const dispatch = useDispatch();
+    const handleAddModule = () => {
+        client.createModule(courseId, module).then((module)=>{
+           dispatch(addModule(module));
+        });
+    };
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status)=>{
+           dispatch(deleteModule(moduleId));
+        });
+    };
+    const handleUpdateModule = (moduleId) => {
+        client.updateModule(module).then((status)=>{
+            dispatch(updateModule(module));
+        });
+    };
     return (
         <ul className="list-group pb-2">
             <li className="list-group-item list-group-item-secondary border">
@@ -23,11 +41,11 @@ function ModuleList() {
                 <i className="fa-solid fa-check-circle wd-color-green float-end wd-custom-margin"></i>
             </li>
             <li className={"list-group-item"}>
-                <button onClick={() => dispatch(addModule({...module, course: courseId}))}
+                <button onClick={handleAddModule}
                         className={"btn btn-success border float-end m-1"}>
                     Add
                 </button>
-                <button onClick={() => dispatch(updateModule(module))}
+                <button onClick={() => handleUpdateModule(module)}
                         className={"btn btn-primary border float-end m-1"}>
                     Update
                 </button>
@@ -44,7 +62,7 @@ function ModuleList() {
                         <li className={`list-group-item ${pathname.includes("Modules") ? "wd-green-border" : ""}`}>
                             <i className="fas fa-grip-vertical wd-custom-margin"></i>
                             <strong>{module.name}</strong>
-                            <button onClick={() => dispatch(deleteModule(module._id))}
+                            <button onClick={() => handleDeleteModule(module._id)}
                                     className={"btn btn-danger border float-end wd-custom-margin"}>
                                 Delete
                             </button>
